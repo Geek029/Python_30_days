@@ -23,8 +23,10 @@ def remove_item(item, quantity=None) :
         print(f"{item} removed from inventory")
     else:
         inventory[item] -= quantity
+        print(f"Removed the mentioned quantity {quantity} from {item}")
         if inventory[item] <= 0:
             inventory[item]=0
+            print(f"{quantity} is more than the stock present in inventory. Defaulting to 0")
     print(inventory)
 
 def show_inventory(item=None):
